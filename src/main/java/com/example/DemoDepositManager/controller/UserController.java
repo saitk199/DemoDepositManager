@@ -2,8 +2,7 @@ package com.example.DemoDepositManager.controller;
 
 import com.example.DemoDepositManager.model.Deposit;
 import com.example.DemoDepositManager.service.DepositManager;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class UserController {
         this.depositManager = depositManager;
     }
 
-    @RequestMapping(value = "/deposits", method = RequestMethod.GET)
+    @GetMapping("/deposits")
     public List<Deposit> getDeposits() {
         return depositManager.getAll();
     }
